@@ -4,8 +4,7 @@ import GroceryList from './GroceryList.js';
 
 export default function Filter(){
 
-  const products =[
-  
+  const products = [
     "Strawberry",
      "Blueberry",
      "Orange",
@@ -25,17 +24,20 @@ export default function Filter(){
      "Rice",
      "Pasta",
      "Bread",
-    ]
+    ];
+
+
+
 
   const [inputStr, setInputStr] = useState('');
   
   const changeInputStr = (e) =>{
     setInputStr(e.target.value);
-}
-function getFilteredList(inputStr, products) {
-  return products;
-}
-const filterdList = getFilteredList(inputStr, products);
+    }
+    function getFilteredList(inputStr, products) {
+    return products;
+    }
+    const filterdList = getFilteredList(inputStr, products);
 
 
 
@@ -55,3 +57,6 @@ const filterdList = getFilteredList(inputStr, products);
 
 }
 
+
+
+     

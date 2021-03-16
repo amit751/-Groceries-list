@@ -1,10 +1,10 @@
 
 
 export default function BasketItem(props){
-  console.log(props);
+    const [counter, setCounter] = useState(0);
  return(
     <li>
-      <p>{props.name},{props.counter}</p>  
+      <p></p>  
     </li>
  );
 }

@@ -5,13 +5,14 @@ import BasketItem from "./BasketItem.js";
 
 export default function GroceryList(props){
     
-  const basketList = [];
+    const basketList=[];
+    const [counter, setCounter] = useState(1);
 
-  function updateBasketList(name, counter) {
-    // const findItem = basketList.find((item) => item.name === name);
-    // if (!findItem) {
-
-    // }
+    function updateBasketItem(name) {
+        const findItem = basketList.find((item) => item.props.name === name);
+        if (!findItem) {
+            basketList.push(item)
+        }
     const item = <BasketItem name={name} counter={counter} />
     basketList.push(item);
     console.log(basketList);
@@ -25,7 +26,7 @@ export default function GroceryList(props){
      // const [itemconter, setInputStr] = useState('');
         return (
         
-          <GroceryItem key={"#" + index} name={item} onClick={updateBasketList}/>
+          <GroceryItem key={"#" + index} name={item} onClick={updateBasketItem}/>
       );
     });
 

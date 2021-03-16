@@ -1,6 +1,6 @@
 import react , {useState} from "react";
 
-export default function BusketList(props){
-   
+export default function BasketList(props){
+    
     
 }

@@ -1,6 +1,5 @@
-import react , {useState} from "react";
+import {useState} from "react";
 import GroceryItem from "./GroceryItem.js";
-import BasketItem from "./BasketItem.js";
 import BasketList from "./BasketList.js";
 
 export default function GroceryList(props){

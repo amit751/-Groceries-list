@@ -1,4 +1,3 @@
-import react , {useState} from "react";
 import BasketItem from "./BasketItem";
 
 export default function BasketList({basketList, onclickDecrease}){

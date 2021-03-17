@@ -1,77 +1,20 @@
-import react , {useState} from "react";
-const products =[
+import '../styles/items.css';
 
-    "Strawberry",
-     "Blueberry",
-     "Orange",
-     "Banana",
-     "Apple",
-     "Carrot",
-     "Celery",
-     "Mushroom",
-     "Green Pepper",
-     "Eggs",
-     "Cheese",
-     "Butter",
-     "Chicken",
-     "Beef",
-     "Pork",
-     "Fish",
-     "Rice",
-     "Pasta",
-     "Bread",
-]
-
-
-
-
-
-function GrouceryItem(props){
-    
-    const [counter, setCounter] = useState(0);
-    
-    const increase = ()=> {
-        setCounter(counter+1);
-        console.log(counter);
-        return(
-            <BasketItem />
-        )
-    }
-   
-    return(
-        <li>
-            <span><button onClick = {increase} >+</button>{props.name}</span>
-        </li>
-    );
-}
-
-
-
-function BasketItem(props){
+export default function GroceryItem({name, onclick}){
     
     return(
         <li>
-            <span>{props.name}</span>
+            <p>{name} </p>
+            {/* <button onClick={() => {onclick(name);}}> */}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-plus-circle-fill button addButton" viewBox="0 0 16 16"  onClick={() => {onclick(name);}}>
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                </svg>
+            {/* </button> */}
         </li>
     );
-}
-
-
-
-
-export default function GrouceryList(){
-    const arrey = products.map((item,index)=>{
-        return(<GrouceryItem key={index} name={item}/>);
-    });
-    
-    return(
-        <>
-        <h1>GrouceryList</h1>
-        <ul>
-          {arrey}  
             
-        </ul>
-        </>
-    );
 }
+
+
+
 

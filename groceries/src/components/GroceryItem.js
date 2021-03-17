@@ -1,20 +1,11 @@
 import react , {useState} from "react";
 
-export default function GroceryItem(props){
-    const [counter, setCounter] = useState(0);
+export default function GroceryItem({name, onclick}){
     
     return(
         <li>
-            <button
-             onClick={() => {
-                setCounter(counter + 1);
-                props.updateBasketList(props.name, counter,setCounter)
-                }}
-            >
-            
-             +
-            </button>
-            <p>{props.name}, {counter}</p>
+            <button onClick={() => {onclick(name);}}> + </button>
+            <p>{name} </p>
         </li>
     );
             

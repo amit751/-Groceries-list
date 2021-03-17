@@ -1,10 +1,11 @@
 
 
-export default function BasketItem(props){
-  console.log(props);
+export default function BasketItem({name, counter , onclickDecrease}){
+  
  return(
     <li>
-      <p>{props.counter},{props.counter}</p>  
+      <button onClick={() => {onclickDecrease(name)}}>-</button>
+      <p>{name} {counter}</p>  
     </li>
  );
 }

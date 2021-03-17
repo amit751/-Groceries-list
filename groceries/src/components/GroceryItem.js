@@ -8,7 +8,7 @@ export default function GroceryItem(props){
             <button
              onClick={() => {
                 setCounter(counter + 1);
-                props.updateBasketList(props.name, props.counter)
+                props.updateBasketList(props.name, counter,setCounter)
                 }}
             >
             

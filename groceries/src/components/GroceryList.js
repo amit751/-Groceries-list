@@ -7,7 +7,7 @@ export default function GroceryList(props){
     
   const basketList = [];
 
-  function updateBasketList(name, counter) {
+  function updateBasketList(name, counter,setCounter) {
     // const findItem = basketList.find((item) => item.name === name);
     // if (!findItem) {
 

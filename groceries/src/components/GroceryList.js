@@ -1,6 +1,7 @@
 import {useState} from "react";
 import GroceryItem from "./GroceryItem.js";
 import BasketList from "./BasketList.js";
+import '../styles/lists.css'
 
 export default function GroceryList(props){
     
@@ -45,13 +46,19 @@ export default function GroceryList(props){
 
     return(
        
-      <>
-        <ul>
-          <BasketList basketList={basketList} onclickDecrease={onclickDecrease} />
-        </ul>
-        <ul>
-          {groceryList}
-        </ul>
-      </>
+      <div className={'lists-container'}>
+        <div>
+          <h2>Groceries</h2>
+          <ul className={'grocery-list'}>
+            {groceryList}
+          </ul>
+        </div>
+        <div>
+          <h2>Basket</h2>
+          <ul className={'basket-list'}>
+            <BasketList basketList={basketList} onclickDecrease={onclickDecrease} />
+          </ul>
+        </div>
+      </div>
     );
 }

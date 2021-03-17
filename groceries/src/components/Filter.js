@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import GroceryList from './GroceryList.js';
+import '../styles/filter.css'
 
 
 export default function Filter(){
-
   const products = [
     "Strawberry",
      "Blueberry",
@@ -27,8 +27,6 @@ export default function Filter(){
     ];
 
 
-//["D F D F" , "dsfgdsf" , "gdfgfg"]
-///"t y y"
 
   const [inputStr, setInputStr] = useState('');
   const [groceryList, setGroceryList] = useState(products);
@@ -36,25 +34,22 @@ export default function Filter(){
   const changeInputStr = async (e) =>{
     setInputStr(e.target.value);
     setGroceryList(getFilteredList(e.target.value, products));
-    
   }
   
   function getFilteredList(inputStr, products) {
-    console.log("im here");
    return products.filter((item) => {
      return item.toLowerCase().search(inputStr.toLowerCase()) !== -1;
   });
   }
 
-    //I suspect that the problem lies in the fact that you are calling your state setter immediately inside the function component body, which forces React to re-invoke your function again, with the same props, which ends up calling the state setter again, which triggers React to call your function again.... and so on.
-    ///[" y y g r f" , "r t"]
-    //"g r"
- 
-
   return(
     <div>
-      <h1>Filter list</h1>
-      <input onChange={changeInputStr}/>
+      <div className={'header-container'}>
+        <div className={'header-div'}>
+          <h1 className={'title'}>Amit & Ben's SHOP</h1>
+          <input className={'input-filter'} placeholder={'Look for an item :)'} onChange={changeInputStr}/>
+        </div>
+      </div>
       <GroceryList grocerylist={groceryList} />
 
     </div>

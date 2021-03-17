@@ -1,0 +1,22 @@
+li {
+  display: flex;
+  border: black solid 1px;
+  border-radius: 2rem;
+  position: relative;
+  margin: 0.5rem;
+}
+.button {
+  position: absolute;
+  right: 5%;
+  bottom: 26%;
+}
+.reduceButton:hover {
+  color: red;
+}
+.addButton:hover {
+  color: rgb(36, 212, 36);
+}
+p {
+  margin-left: 5%;
+  font-weight: bold;
+}

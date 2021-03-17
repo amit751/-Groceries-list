@@ -33,9 +33,9 @@ export default function Filter(){
   const [inputStr, setInputStr] = useState('');
   const [groceryList, setGroceryList] = useState(products);
   
-  const changeInputStr = (e) => {
+  const changeInputStr = async (e) =>{
     setInputStr(e.target.value);
-    setGroceryList(getFilteredList(inputStr, products));
+    setGroceryList(getFilteredList(e.target.value, products));
     
   }
   
